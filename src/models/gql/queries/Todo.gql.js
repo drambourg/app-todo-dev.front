@@ -12,3 +12,15 @@ export const GET_TODOS = gql`
     }
   }
 `;
+
+// Get todos by todo types enum
+export const GET_TODO_TYPES = gql`
+  query getTodoTypes {
+    __type(name: "TodoTypes") {
+      name
+      enumValues {
+        name
+      }
+    }
+  }
+`;

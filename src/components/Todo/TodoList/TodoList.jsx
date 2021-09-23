@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_TODOS } from '../../../models/gql/queries/Todo.gql';
 import TodoCard from '../TodoCard/TodoCard';
 import { TodoListContainer } from './TodoList.style';
+import { TodoContext } from '../../../contexts/TodoContext';
 
 const TodoList = () => {
-  const { data, loading, error } = useQuery(GET_TODOS);
+  const { todoContext } = useContext(TodoContext);
+
+  const { data, loading, error } = useQuery(GET_TODOS, {
+    variables: {
+      filters: todoContext.filters,
+      orderBy: todoContext.orderBy,
+    },
+    fetchPolicy: 'network-only',
+    nextFetchPolicy: 'cache-first',
+    pollInterval: 0,
+  });
 
   return (
     <>
