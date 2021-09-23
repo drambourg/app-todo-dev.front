@@ -1,10 +1,12 @@
 import React from 'react';
+import { AppContainer } from './App.style';
+import Routes from './Routes';
 
 const App = () => {
   return (
-    <div className='App'>
-      <h1>Welcome Todo Application</h1>
-    </div>
+    <AppContainer>
+      <Routes />
+    </AppContainer>
   );
 };
 

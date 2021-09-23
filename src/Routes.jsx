@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import TodoList from './components/Todo/TodoList/TodoList';
-import NotFoundPageView from './pages/NotFoundPage/NotFoundPageView';
+import NotFoundPageView from './views/NotFoundPage/NotFoundPageView';
+import TodoListView from './views/TodoList/TodoListView';
 
 export const Routes = () => {
   return (
@@ -10,7 +10,7 @@ export const Routes = () => {
         <div>Todo Home</div>
       </Route>
       <Route exact path='/todos'>
-        <TodoList />
+        <TodoListView />
       </Route>
       <Route path={`/todos/:id`}>
         <div>Todo details</div>
