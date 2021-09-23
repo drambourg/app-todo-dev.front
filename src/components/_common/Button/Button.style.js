@@ -25,3 +25,12 @@ export const ColoredButton = styled(Button)`
   background-color: ${(props) => (props.primary ? '#198754' : '#fd7e14')};
   color: #fff;
 `;
+
+export const OutlineButton = styled(Button)`
+  background-color: unset;
+  color: black;
+  border: 2px solid black;
+  &:hover {
+    background-color: lightgrey;
+  }
+`;

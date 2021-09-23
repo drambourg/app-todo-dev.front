@@ -7,8 +7,12 @@ import {
   CardHeader,
   CardFooter,
 } from '../../_common/Card/Card.style';
-import { ColoredButton } from '../../_common/Button/Button.style';
+import {
+  ColoredButton,
+  OutlineButton,
+} from '../../_common/Button/Button.style';
 import { timestampToDisplay } from '../../../helpers/timeConverter.helper';
+import { Link } from 'react-router-dom';
 
 // Todo summary information and actions
 const TodoCard = ({ todo }) => {
@@ -24,6 +28,11 @@ const TodoCard = ({ todo }) => {
           </CardHeader>
           <CardBody>
             <CardBadge>{todo.type || 'undefined'}</CardBadge>
+            {todo.id && (
+              <Link to={`todos/${todo.id}`}>
+                <OutlineButton>More info ...</OutlineButton>
+              </Link>
+            )}
           </CardBody>
           <CardFooter>
             {(todo.createdAt && timestampToDisplay(todo.createdAt)) ||

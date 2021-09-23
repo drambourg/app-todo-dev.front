@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import TodoContextProvider from '../contexts/TodoContext';
 import HomeView from '../views/Home/HomeView';
 import NotFoundPageView from '../views/NotFoundPage/NotFoundPageView';
+import TodoDetailsView from '../views/TodoDetails/TodoDetailsView';
 import TodoListView from '../views/TodoList/TodoListView';
 
 export const Routes = () => {
@@ -17,7 +18,9 @@ export const Routes = () => {
         </TodoContextProvider>
       </Route>
       <Route path={`/todos/:id`}>
-        <div>Todo details</div>
+        <TodoContextProvider>
+          <TodoDetailsView />
+        </TodoContextProvider>
       </Route>
       <Route path='*'>
         <NotFoundPageView />

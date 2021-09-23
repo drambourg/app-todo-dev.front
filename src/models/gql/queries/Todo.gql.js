@@ -13,6 +13,20 @@ export const GET_TODOS = gql`
   }
 `;
 
+// Get todos by todo id
+export const GET_TODO_BY_ID = gql`
+  query getTodoById($id: ID!) {
+    getTodoById(id: $id) {
+      id
+      createdAt
+      type
+      isDone
+      text
+      title
+    }
+  }
+`;
+
 // Get todos by todo types enum
 export const GET_TODO_TYPES = gql`
   query getTodoTypes {
