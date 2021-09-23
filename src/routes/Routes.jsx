@@ -13,8 +13,15 @@ export const Routes = () => {
         <HomeView title='Welcome to Todo App' />
       </Route>
       <TodoContextProvider>
-        <Route exact path='/todos' component={TodoListView} />
-        <Route path={`/todos/:id`} component={TodoDetailsView} />
+        <Route
+          exact
+          path='/todos'
+          render={() => <TodoListView title='My Todo list' />}
+        />
+        <Route
+          path={`/todos/:id`}
+          render={() => <TodoDetailsView title='Your Todo' />}
+        />
       </TodoContextProvider>
       <Route path='*'>
         <NotFoundPageView />
