@@ -58,6 +58,13 @@ export const TodoReducer = (state, action) => {
         orderBy: action.orderBy || 'DATE_ASC',
       };
 
+    case 'RESET_LIST':
+      return {
+        filters: {
+          types: action.todoTypes || [],
+        },
+      };
+
     default:
       return state;
   }

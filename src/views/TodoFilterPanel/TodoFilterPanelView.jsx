@@ -2,6 +2,7 @@ import React from 'react';
 import TodoFilterByIsDone from '../../components/Todo/TodoFilters/TodoFilterByIsDone';
 import TodoFilterByTodoTypes from '../../components/Todo/TodoFilters/TodoFilterByTodoTypes';
 import TodoFilterByTodoTypesShortCuts from '../../components/Todo/TodoFilters/TodoFilterByTodoTypesShortcuts';
+import TodoFilterReset from '../../components/Todo/TodoFilters/TodoFilterReset';
 import TodoFilterSorter from '../../components/Todo/TodoFilters/TodoFilterSorter';
 import { FilterPanelContainer, FilterTitle } from './TodoFilterPanelView.style';
 
@@ -21,6 +22,9 @@ const TodoFilterPanelView = () => {
       <div>
         <FilterTitle>Sort by date</FilterTitle>
         <TodoFilterSorter />
+      </div>
+      <div>
+          <TodoFilterReset/>
       </div>
     </FilterPanelContainer>
   );

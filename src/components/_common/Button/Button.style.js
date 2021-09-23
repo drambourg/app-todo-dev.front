@@ -17,6 +17,7 @@ export const Button = styled.button(
     &:hover {
         opacity:.8
     }
+    margin : 10px 0;
   `
 );
 
