@@ -4,6 +4,7 @@ import { GET_TODOS } from '../../../models/gql/queries/Todo.gql';
 import TodoCard from '../TodoCard/TodoCard';
 import { TodoListContainer } from './TodoList.style';
 import { TodoContext } from '../../../contexts/TodoContext';
+import LoaderSpinner from '../../_common/LoaderSpinner/LoaderSpinner';
 
 const TodoList = () => {
   const { todoContext } = useContext(TodoContext);
@@ -20,7 +21,7 @@ const TodoList = () => {
 
   return (
     <>
-      {loading && <div>load...</div>}
+      {loading && <LoaderSpinner />}
       {error && <div>{`Unexpected error = ${error}`}</div>}
       {data && (
         <TodoListContainer>
