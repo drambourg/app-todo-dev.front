@@ -19,12 +19,13 @@ const TodoFilterByTodoTypes = () => {
         data &&
         !todoContext.filters.types &&
         data?.__type?.enumValues &&
+        // convert json property on array from enum result
         Array.from(data?.__type?.enumValues, (todoType) => todoType.name);
       todoTypes && dispatch({ type: 'FILTER_ALL_TYPES', todoTypes });
     } catch (e) {
       console.log(e);
     }
-  }, [data]);
+  }, [data]);// eslint-disable-line react-hooks/exhaustive-deps
 
   const handleCheckTodoType = (e) => {
     try {
