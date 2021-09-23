@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_TODOS } from '../../../models/gql/queries/Todo.gql';
 import TodoCard from '../TodoCard/TodoCard';
-import { TodoListContainer } from './TodoList.style';
+import { HeaderListContainer, TodoListContainer } from './TodoList.style';
 import { TodoContext } from '../../../contexts/TodoContext';
 import LoaderSpinner from '../../_common/LoaderSpinner/LoaderSpinner';
 
@@ -24,12 +24,15 @@ const TodoList = () => {
       {loading && <LoaderSpinner />}
       {error && <div>{`Unexpected error = ${error}`}</div>}
       {data && (
+        <>
+        <HeaderListContainer>{`${data?.getTodoList?.length} résultat(s)`}</HeaderListContainer>
         <TodoListContainer>
           {data?.getTodoList &&
             data.getTodoList.map((todo, index) => (
               <TodoCard key={`todo-${index}`} todo={todo} refetch={refetch} />
             ))}
         </TodoListContainer>
+        </>
       )}
     </>
   );
