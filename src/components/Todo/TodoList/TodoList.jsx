@@ -9,7 +9,7 @@ import LoaderSpinner from '../../_common/LoaderSpinner/LoaderSpinner';
 const TodoList = () => {
   const { todoContext } = useContext(TodoContext);
 
-  const { data, loading, error } = useQuery(GET_TODOS, {
+  const { data, loading, error, refetch } = useQuery(GET_TODOS, {
     variables: {
       filters: todoContext.filters,
       orderBy: todoContext.orderBy,
@@ -27,7 +27,7 @@ const TodoList = () => {
         <TodoListContainer>
           {data?.getTodoList &&
             data.getTodoList.map((todo, index) => (
-              <TodoCard key={`todo-${index}`} todo={todo} />
+              <TodoCard key={`todo-${index}`} todo={todo} refetch={refetch} />
             ))}
         </TodoListContainer>
       )}

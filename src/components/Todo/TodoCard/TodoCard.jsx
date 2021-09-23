@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 import {
   Card,
   CardBody,
@@ -12,17 +14,36 @@ import {
   OutlineButton,
 } from '../../_common/Button/Button.style';
 import { timestampToDisplay } from '../../../helpers/timeConverter.helper';
-import { Link } from 'react-router-dom';
+import { UPDATE_TODO_STATUS } from '../../../models/gql/mutations/Todo.gql';
 
 // Todo summary information and actions
-const TodoCard = ({ todo }) => {
+const TodoCard = ({ todo, refetch }) => {
+  const [updateTodoStatusById, { error }] = useMutation(UPDATE_TODO_STATUS);
+
+  if (error) return `Error! ${error.message}`;
+
+  const toggleTodoStatus = () => {
+    try {
+      todo.id &&
+        updateTodoStatusById({
+          variables: {
+            id: todo.id,
+            isDone: !todo.isDone,
+          },
+        });
+      refetch();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       {todo && (
         <Card key={todo.id}>
           <CardHeader>
             <CardTitle>{todo.title || 'undefined'}</CardTitle>
-            <ColoredButton primary={todo.isDone}>
+            <ColoredButton primary={todo.isDone} onClick={toggleTodoStatus}>
               {todo.isDone ? 'Done' : 'To Do'}
             </ColoredButton>
           </CardHeader>
