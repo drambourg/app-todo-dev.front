@@ -8,6 +8,7 @@ import {
   CardFooter,
 } from '../../_common/Card/Card.style';
 import { ColoredButton } from '../../_common/Button/Button.style';
+import { timestampToDisplay } from '../../../helpers/timeConverter.helper';
 
 // Todo summary information and actions
 const TodoCard = ({ todo }) => {
@@ -24,7 +25,10 @@ const TodoCard = ({ todo }) => {
           <CardBody>
             <CardBadge>{todo.type || 'undefined'}</CardBadge>
           </CardBody>
-          <CardFooter>00/00/00</CardFooter>
+          <CardFooter>
+            {(todo.createdAt && timestampToDisplay(todo.createdAt)) ||
+              'No Date'}
+          </CardFooter>
         </Card>
       )}
     </>
