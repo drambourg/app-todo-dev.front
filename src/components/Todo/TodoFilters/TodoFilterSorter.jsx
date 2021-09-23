@@ -32,7 +32,7 @@ const TodoFilterSorter = () => {
   return (
     <div>
       <Button onClick={toggleSorter}>
-       {order  && ` Sorting by ${orderLabel[order]}` || 'Sort it!'}
+       {(order  && ` Sorting by ${orderLabel[order]}`) || 'Sort it!'}
       </Button>
     </div>
   );
