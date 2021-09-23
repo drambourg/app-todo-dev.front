@@ -1,13 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import NotFoundPageView from './views/NotFoundPage/NotFoundPageView';
-import TodoListView from './views/TodoList/TodoListView';
+import HomeView from '../views/Home/HomeView';
+import NotFoundPageView from '../views/NotFoundPage/NotFoundPageView';
+import TodoListView from '../views/TodoList/TodoListView';
 
 export const Routes = () => {
   return (
     <Switch>
       <Route exact path='/'>
-        <div>Todo Home</div>
+        <HomeView title='Welcome to Todo App' />
       </Route>
       <Route exact path='/todos'>
         <TodoListView />
