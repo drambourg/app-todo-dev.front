@@ -34,6 +34,15 @@ export const TodoReducer = (state, action) => {
         },
       };
 
+    case 'SET_FILTER_TYPE_BUSINESS':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          types: ['Marketing', 'Communication'],
+        },
+      };
+
     default:
       return state;
   }
