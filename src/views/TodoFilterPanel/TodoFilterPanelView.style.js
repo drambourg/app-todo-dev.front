@@ -4,6 +4,11 @@ export const FilterPanelContainer = styled.div(
   `    
     border-bottom: 1px solid lightgrey;
     padding:10px;
+    display: grid;
+    grid-auto-flow: column;
+    @media (max-width: 1024px) {
+        grid-auto-flow: row;
+        }
     `
 );
 
