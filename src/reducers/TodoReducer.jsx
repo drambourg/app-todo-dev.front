@@ -43,6 +43,15 @@ export const TodoReducer = (state, action) => {
         },
       };
 
+    case 'TOGGLE_FILTER_ISDONE':
+      return {
+        ...state,
+        filters: {
+          ...(action.isDone && { isDone: action.isDone === 'true' }),
+          types: state.filters.types,
+        },
+      };
+
     default:
       return state;
   }
