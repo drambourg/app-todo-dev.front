@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { TodoContext } from '../../../contexts/TodoContext';
-import { useContext, useEffect } from 'react/cjs/react.development';
 
 // Apply todo status filter
 const TodoFilterByIsDone = () => {

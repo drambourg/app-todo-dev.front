@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { TodoContext } from '../../../contexts/TodoContext';
-import { useContext } from 'react/cjs/react.development';
 import { Button } from '../../_common/Button/Button.style';
 import { GET_TODO_TYPES } from '../../../models/gql/queries/Todo.gql';
 import { useQuery } from '@apollo/client';

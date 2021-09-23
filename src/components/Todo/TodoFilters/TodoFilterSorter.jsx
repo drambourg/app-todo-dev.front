@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { TodoContext } from '../../../contexts/TodoContext';
-import { useContext, useEffect } from 'react/cjs/react.development';
 import { Button } from '../../_common/Button/Button.style';
 
 // Sort Todo by date

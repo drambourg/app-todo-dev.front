@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { useContext } from 'react/cjs/react.development';
 import { GET_TODO_TYPES } from '../../../models/gql/queries/Todo.gql';
 import { TodoContext } from '../../../contexts/TodoContext';
 import { FilterCheckBox, FilterCheckBoxContainer } from './TodoFilters.style';

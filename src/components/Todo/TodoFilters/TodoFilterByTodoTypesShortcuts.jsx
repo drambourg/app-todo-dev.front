@@ -1,5 +1,4 @@
-import React from 'react';
-import { useContext } from 'react/cjs/react.development';
+import React, { useContext } from 'react';
 import { TodoContext } from '../../../contexts/TodoContext';
 import { Button } from '../../_common/Button/Button.style';
 
