@@ -52,6 +52,12 @@ export const TodoReducer = (state, action) => {
         },
       };
 
+    case 'SET_ORDER_BY':
+      return {
+        ...state,
+        orderBy: action.orderBy || 'DATE_ASC',
+      };
+
     default:
       return state;
   }
