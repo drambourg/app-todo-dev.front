@@ -11,7 +11,7 @@ This application is to manage status on Todos, and consult all of ones. Specific
 5. [Contact](#contact)
 
 # Stack
-This application is developped on ReactJS 16, and uses these main libraries :
+This application is developped on ReactJS 17, and uses these main libraries :
 - ApolloClient to connect on GraphQL Api provided,
 - React-Dom, to manage app routing
 - Emotion to style app, by css in js,
